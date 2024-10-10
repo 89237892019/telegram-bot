@@ -1,13 +1,17 @@
- import openai
+import openai
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
-import os
 from dotenv import load_dotenv
 
+# Загружаем переменные окружения из .env
 load_dotenv()
 
-TELEGRAM_TOKEN = 
+# Получаем токены из переменных окружения
+TELEGRAM_TOKEN = os.getenv("7038406672:AAHednSQDXi8B2PAqTu1pIsUFw0sTQulS6o")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
+# Устанавливаем ключ API OpenAI
 openai.api_key = OPENAI_API_KEY
 
 async def handle_message(update: Update, context) -> None:
